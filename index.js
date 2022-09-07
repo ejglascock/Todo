@@ -90,6 +90,10 @@ app.delete("/todos/:id", async(req, res) => {
     }
 })
 
+app.get("*", (req,res) => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
+
 // ROUTES end //
 
 app.listen(PORT, () => {
